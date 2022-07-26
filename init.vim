@@ -29,6 +29,7 @@ Plug 'https://github.com/neoclide/coc.nvim'
 Plug 'https://github.com/ryanoasis/vim-devicons'
 Plug 'https://github.com/preservim/tagbar'
 Plug 'https://github.com/42Paris/42header'
+Plug 'https://github.com/vim-syntastic/syntastic'
 Plug 'https://github.com/alexandregv/norminette-vim'
 
 set encoding=UTF-8
