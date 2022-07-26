@@ -10,6 +10,11 @@
 :set softtabstop=4
 :set mouse=a
 
+" ----		VARIABLES		---- "
+
+let g:user42 = 'kschmidt'
+let g:mail42 = 'kschmidt@student.42.fr'
+
 " ----		PLUGIN SETUP	---- "
 
 call plug#begin()
@@ -23,7 +28,8 @@ Plug 'https://github.com/rafi/awesome-vim-colorschemes'
 Plug 'https://github.com/neoclide/coc.nvim'
 Plug 'https://github.com/ryanoasis/vim-devicons'
 Plug 'https://github.com/preservim/tagbar'
-Plug 'https://github.com/terryma/vim-multiple-cursors'
+Plug 'https://github.com/42Paris/42header'
+Plug 'https://github.com/alexandregv/norminette-vim'
 
 set encoding=UTF-8
 
@@ -31,8 +37,8 @@ call plug#end()
 
 " ----		KEYBIND SETUP		---- "
 
-nnoremap <C-n> :NERDTreeToggle<CR>
-nnoremap <Esc> <C-\><C-n><CR>
+nmap <C-n> :NERDTreeToggle<CR>
+:tnoremap <Esc> <C-\><C-n>
 
 nmap <F8> :TagbarToggle<CR>
 
