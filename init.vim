@@ -42,6 +42,7 @@ nmap <C-n> :NERDTreeToggle<CR>
 :tnoremap <Esc> <C-\><C-n>
 
 nmap <F8> :TagbarToggle<CR>
+nnoremap <C-s> :w<CR>
 
 " ----		PLUGIN SETUP	---- "
 
