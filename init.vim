@@ -10,11 +10,6 @@
 :set softtabstop=4
 :set mouse=a
 
-" ----		VARIABLES		---- "
-
-let g:user42 = 'kschmidt'
-let g:mail42 = 'kschmidt@student.42.fr'
-
 " ----		PLUGIN SETUP	---- "
 
 call plug#begin()
@@ -28,7 +23,6 @@ Plug 'https://github.com/rafi/awesome-vim-colorschemes'
 Plug 'https://github.com/neoclide/coc.nvim'
 Plug 'https://github.com/ryanoasis/vim-devicons'
 Plug 'https://github.com/preservim/tagbar'
-Plug 'https://github.com/42Paris/42header'
 Plug 'https://github.com/vim-syntastic/syntastic'
 Plug 'https://github.com/alexandregv/norminette-vim'
 
