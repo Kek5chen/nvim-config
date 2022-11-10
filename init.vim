@@ -25,6 +25,8 @@ Plug 'https://github.com/ryanoasis/vim-devicons'
 Plug 'https://github.com/preservim/tagbar'
 Plug 'https://github.com/vim-syntastic/syntastic'
 Plug 'https://github.com/alexandregv/norminette-vim'
+Plug 'sheerun/vim-polyglot'
+Plug 'github/copilot.vim'
 
 set encoding=UTF-8
 
