@@ -30,6 +30,7 @@ Plug 'github/copilot.vim'
 Plug 'akinsho/bufferline.nvim', { 'tag': 'v3.*' }
 Plug 'nvim-lua/plenary.nvim'
 Plug 'TimUntersberger/neogit'
+Plug 'jbyuki/instant.nvim'
 
 set encoding=UTF-8
 
@@ -116,4 +117,8 @@ require('neogit').setup {
 	kind = "split"
 }
 EOF
+
+" instant.nvim
+let g:instant_username = 'kx'
+
 " ----		CONFIG END		---- "
