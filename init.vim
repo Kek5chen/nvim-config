@@ -44,7 +44,7 @@ map <Leader>h :bprev<CR>
 map <Leader>l :bnext<CR>
 map <Leader>j :bfirst<CR>
 map <Leader>k :blast<CR>
-map <Leader>q :bd<CR>
+map <Leader>qq :bd<CR>
 map <Leader>Q :bd!<CR>
 map <Leader>1 :b1<CR>
 map <Leader>2 :b2<CR>
@@ -66,7 +66,7 @@ map <Leader>q8 :bd 8<CR>
 map <Leader>q9 :bd 9<CR>
 
 " NerdTree
-nmap <C-n> :NERDTreeToggle<CR>
+nmap <Leader>n :NERDTreeToggle<CR>
 :tnoremap <Esc> <C-\><C-n>
 
 " Tagbar
