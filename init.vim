@@ -31,6 +31,8 @@ Plug 'akinsho/bufferline.nvim', { 'tag': 'v3.*' }
 Plug 'nvim-lua/plenary.nvim'
 Plug 'TimUntersberger/neogit'
 Plug 'jbyuki/instant.nvim'
+Plug 'glepnir/dashboard-nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
 
 set encoding=UTF-8
 
@@ -79,6 +81,13 @@ nnoremap <C-s> :w<CR>
 " Neogit
 nnoremap <leader>gg :Neogit<CR>
 
+" Telescope
+nnoremap <Leader>ff <cmd>Telescope find_files<cr>
+nnoremap <Leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <Leader>fb <cmd>Telescope buffers<cr>
+nnoremap <Leader>fh <cmd>Telescope help_tags<cr>
+nnoremap <Leader>fr <cmd>Telescope oldfiles<cr>
+
 " ----		PLUGIN SETUP	---- "
 
 " color scheme
@@ -121,4 +130,52 @@ EOF
 " instant.nvim
 let g:instant_username = 'kx'
 
+" dashboard
+lua << EOF
+local dash = require('dashboard')
+dash.custom_header = {
+	"                    >,o~o\\/)-'     ,-'         \\       ,.__.,-                ",
+	"                    <\\__,'c~      (.---..____..,'      >'oo \\~)               ",
+	"                       |--'_.---~~~~:     __.......__ `-`---'(                ",
+	"                      ',-~~         |   /'           `~~-. `'       .-~~~~.   ",
+	"                     ','            ; ,'                  |    '~~\\  |     `. ",
+	"                   ,','            ; ;                    |  ,'    | |      | ",
+	"                 ,.|,'            / |                     |  |     | `.     | ",
+	"                | \\`|           ,'  |                     | _.--,  `. |     `.",
+	"                |  | \\      _.-'___                   _.--~~,-',    | |      |",
+	"                |  `. |--__..-~~   ~~~~~---...___.--~~ _,-'~ ,|     | `.__,--'",
+	"                |   | /';                     ./'   _,'     / |_,--~~         ",
+	"                `   /' |                _.---'  _,-'      ,'                  ",
+	"                 \\/'   |              /'      ~~ ~~--._   ;                   ",
+	"       `\\ `\\    ,','~~\\|            /'   __        .--'  /__,   __            ",
+	"         `\\ `\\_.||  ;  ||         /'  ,-~  `~.    '----~~~_.--~~              ",
+	"           `\\/`  |  |  ;______  ,'   |  ,'    |       _.-~  ;               _,",
+	"      --..__|    `\\_`,'\\     _`\\     `. |     ;   .-~~   __..----~~~~~      \\ ",
+	"       _,-~ |  `-       `--~~          `----~'_..-    ~~~  /                | ",
+	"     /'--.   \\                           _       / ,'  ~~~7~~~~~~~~         |/",
+	"   ,'     ~-. `--.------------....__   /'_\\_...-'       ,'`-.      /        |-",
+	",-~~~~-._   /   (`-\\___|___;...--'--~~~~~            ,-'     |    |         |~",
+	"/~~~-    ~~~     `\\                            _,__,'   ___,-'    |         | ",
+	"`-.                `-..___...__            _.-'/    ~~~~          ;         ; ",
+	"`--`\\____       __..---~~ ~~--..~--------~~   |                  ,'       ,'  "
+}
+dash.custom_center = {
+	{icon = '', desc = '  Find File                  ', shortcut = '<l> ff', action = 'Telescope find_files'},
+	{icon = '', desc = '  Recently Used Files        ', shortcut = '<l> fr', action = 'Telescope oldfiles'},
+	{icon = '', desc = '  Live Grep                  ', shortcut = '<l> fg', action = 'Telescope live_grep'},
+	{icon = '', desc = '  Merge Conflicts            ', shortcut = '<l> gg', action = 'Neogit'},
+	{icon = '', desc = '  Cope                       ', shortcut = '      ', action = 'qa!'}
+}
+dash.footer_pad = 5
+dash.custom_footer = {
+	"Depressive realism",
+	"",
+	"Depressive realism is the hypothesis developed by Lauren Alloy and Lyn Yvonne Abramson that depressed individuals make more realistic inferences than non-depressed individuals.",
+	"Although depressed individuals are thought to have a negative cognitive bias that results in recurrent, negative automatic thoughts,",
+	"maladaptive behaviors, and dysfunctional world beliefs, depressive realism argues not only that this negativity may reflect a more accurate appraisal of the world", 
+	"but also that non-depressed individuals' appraisals are positively biased.",
+	"- From Wikipedia, the free encyclopedia"
+}
+
+EOF
 " ----		CONFIG END		---- "
