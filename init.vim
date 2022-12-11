@@ -28,6 +28,8 @@ Plug 'https://github.com/alexandregv/norminette-vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'github/copilot.vim'
 Plug 'akinsho/bufferline.nvim', { 'tag': 'v3.*' }
+Plug 'nvim-lua/plenary.nvim'
+Plug 'TimUntersberger/neogit'
 
 set encoding=UTF-8
 
@@ -73,6 +75,9 @@ nmap <F8> :TagbarToggle<CR>
 " Save
 nnoremap <C-s> :w<CR>
 
+" Neogit
+nnoremap <leader>gg :Neogit<CR>
+
 " ----		PLUGIN SETUP	---- "
 
 " color scheme
@@ -102,4 +107,13 @@ require("bufferline").setup {
 }
 EOF
 
+" neogit
+lua << EOF
+require('neogit').setup {
+	integrations = {
+		diffview = true
+	},
+	kind = "split"
+}
+EOF
 " ----		CONFIG END		---- "
