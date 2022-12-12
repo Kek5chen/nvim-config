@@ -33,6 +33,8 @@ Plug 'TimUntersberger/neogit'
 Plug 'jbyuki/instant.nvim'
 Plug 'glepnir/dashboard-nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
+Plug '42Paris/42header'
+Plug 'paretje/nvim-man'
 
 set encoding=UTF-8
 
