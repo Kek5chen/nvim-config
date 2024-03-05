@@ -48,6 +48,10 @@ require("lazy").setup({
     cmd = "Neogit",
   },
 	"mhinz/vim-startify",
+  {
+    "Eandrju/cellular-automaton.nvim",
+    cmd = "CellularAutomaton",
+  }
 })
 
 -- Setup neogit
