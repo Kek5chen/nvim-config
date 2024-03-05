@@ -25,8 +25,14 @@ require("lazy").setup({
 	"preservim/tagbar",
 	"dense-analysis/ale",
 	"nvim-lua/plenary.nvim",
-	"nvim-telescope/telescope.nvim",
-	"NeogitOrg/neogit",
+  {
+	  "nvim-telescope/telescope.nvim",
+    cmd = "Telescope",
+  },
+  {
+	  "NeogitOrg/neogit",
+    cmd = "Neogit",
+  },
 	"mhinz/vim-startify",
 })
 
