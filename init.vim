@@ -1,4 +1,4 @@
-source lua/init.lua
+source ~/.config/nvim/lua/init.lua
 " ----		GENERAL CONFIG OPTIONS	---- "
 
 set number
