@@ -14,21 +14,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-	"neoclide/coc.nvim",
-  {
-    "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate",
-    config = function () 
-      local configs = require("nvim-treesitter.configs")
-
-      configs.setup({
-          ensure_installed = { "c", "lua", "vim", "vimdoc", "javascript", "typescript", "cpp", "html" },
-          sync_install = false,
-          highlight = { enable = true },
-          indent = { enable = true },  
-        })
-    end
-  },
+  "nvim-treesitter/nvim-treesitter",
 	"preservim/nerdtree",
 	"tpope/vim-surround",
 	"tpope/vim-commentary",
