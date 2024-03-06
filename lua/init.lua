@@ -26,18 +26,21 @@ require("lazy").setup({
 	"dense-analysis/ale",
 	"nvim-lua/plenary.nvim",
   {
-	  "nvim-telescope/telescope.nvim",
-    cmd = "Telescope",
-  },
-  {
 	  "NeogitOrg/neogit",
     cmd = "Neogit",
+  },
+  {
+	  "nvim-telescope/telescope.nvim",
+    cmd = "Telescope",
   },
 	"mhinz/vim-startify",
   {
     "Eandrju/cellular-automaton.nvim",
     cmd = "CellularAutomaton",
-  }
+  },
+  "Civitasv/cmake-tools.nvim",
+  "stevearc/overseer.nvim",
+  "akinsho/toggleterm.nvim",
 })
 
 -- Setup neogit
@@ -48,6 +51,20 @@ require('neogit').setup {
 	},
 	kind = "split"
 }
+
+-- treesitter
+require('nvim-treesitter.configs').setup {
+  ensure_installed = { "c", "cpp", "lua", "vim", "nix", "glsl" },
+  highlight = {
+    enable = true,
+  },
+}
+
+-- cmake-tools
+require("cmake-tools").setup({})
+
+-- overseer
+require('overseer').setup()
 
 -- he's crazy
 
