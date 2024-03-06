@@ -11,12 +11,13 @@ set softtabstop=2
 set mouse=a
 set laststatus=2
 set expandtab
-set encoding=UTF-8
 set termguicolors
 
 " ----		KEYBIND SETUP		---- "
 
 map <Space> <Leader>
+
+tnoremap <Esc> <C-\><C-n>
 
 " buffer navigation
 map <Leader>h :bprev<CR>
@@ -46,7 +47,6 @@ map <Leader>q9 :bd 9<CR>
 
 " NerdTree
 nmap <Leader>n :NERDTreeToggle<CR>
-tnoremap <Esc> <C-\><C-n>
 
 " Tagbar
 nmap <F8> :TagbarToggle<CR>
