@@ -23,7 +23,7 @@ require("lazy").setup({
 	"rafi/awesome-vim-colorschemes",
 	"ryanoasis/vim-devicons",
 	"preservim/tagbar",
-	"dense-analysis/ale",
+  -- "dense-analysis/ale",
 	"nvim-lua/plenary.nvim",
   {
 	  "NeogitOrg/neogit",
