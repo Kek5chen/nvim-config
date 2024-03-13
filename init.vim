@@ -1,3 +1,4 @@
+" vimspector
 source ~/.config/nvim/lua/init.lua
 " ----		GENERAL CONFIG OPTIONS	---- "
 
@@ -64,6 +65,7 @@ nnoremap <Leader>fb <cmd>Telescope buffers<cr>
 nnoremap <Leader>fc <cmd>Telescope git_commits<cr>
 nnoremap <Leader>fh <cmd>Telescope help_tags<cr>
 nnoremap <Leader>fr <cmd>Telescope oldfiles<cr>
+nnoremap <Leader>fk <cmd>Telescope keymaps<cr>
 
 " ----		PLUGIN SETUP	---- "
 
