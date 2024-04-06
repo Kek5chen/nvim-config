@@ -1,5 +1,6 @@
-" vimspector
-source ./lua/init.lua
+" lua config
+execute 'luafile ' . stdpath('config') . '/lua/init.lua'
+
 " ----		GENERAL CONFIG OPTIONS	---- "
 
 set number
