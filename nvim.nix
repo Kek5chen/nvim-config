@@ -50,11 +50,27 @@
       awesome-vim-colorschemes # more colorschemes
       vim-devicons # devicons for file types (get a nerdfont pls)
       tagbar # CTags viewer (function / class / variable trees)
-      ale # Linter, Fixer, Completions, Go To Definition / Find References etc..
+      # ale # Linter, Fixer, Completions, Go To Definition / Find References etc..
       plenary-nvim # function library for other plugins
       neogit # neogit (best nvim git client)
       telescope-nvim # finder (finds everything)
       vim-startify # cool start menu
+      vim-nix # nix syntax highlighting and so on
+      crates-nvim # rust crates helper
+      rustaceanvim # rust everything helper
+      webapi-vim # dependency for :RustPlay of rustacean
+      nvim-cmp # auto completion
+      nvim-lspconfig # lsp support
+      vim-vsnip # snippet engine
+      # cmp-vsnip # vsnip source for cmp
+      cmp-nvim-lsp # LSP source for nvim-cmp
+      # cmp-buffer # cmp buffer completions
+      # cmp-path # cmp path completions
+      # cmp-cmdline # cmp cmdline completions
+      nvim-dap # debug adapter protocol
+      nvim-dap-ui # debug adapter protocol ui
+      # vimspector # debugger
+      haskell-tools-nvim
     ];
 
     programs.neovim.defaultEditor = true;
