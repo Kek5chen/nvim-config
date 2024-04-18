@@ -16,6 +16,8 @@
       :set laststatus=2
       :set expandtab
       :set termguicolors
+      
+      nnoremap <C-s> :w<CR>
 
       tnoremap <Esc> <C-\><C-n>
       map <Space> <Leader>
