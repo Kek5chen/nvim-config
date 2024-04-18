@@ -41,7 +41,7 @@
     '';
       # programs.neovim.coc.enable = true;
     programs.neovim.plugins = with pkgs.vimPlugins; [
-      (nvim-treesitter.withPlugins (p: [ p.c p.cpp p.nix p.lua p.vim ]))
+      (nvim-treesitter.withPlugins (p: [ p.c p.cpp p.nix p.lua p.vim p.rust p.haskell ]))
       nerdtree # file tree
       vim-surround # easier parentheses modification
       vim-commentary # comment stuff out easier
