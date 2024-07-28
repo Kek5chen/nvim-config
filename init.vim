@@ -46,12 +46,6 @@ map <Leader>q7 :bd 7<CR>
 map <Leader>q8 :bd 8<CR>
 map <Leader>q9 :bd 9<CR>
 
-" NerdTree
-nmap <Leader>n :NERDTreeToggle<CR>
-
-" Tagbar
-nmap <F8> :TagbarToggle<CR>
-
 " Save
 nnoremap <C-s> :w<CR>
 
