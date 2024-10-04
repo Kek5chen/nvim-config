@@ -34,6 +34,7 @@ require("lazy").setup({
     cmd = "Neogit",
   },
   -- "akinsho/toggleterm.nvim",
+  "mbbill/undotree",
 
 
   -- visuals

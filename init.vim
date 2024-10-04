@@ -61,6 +61,9 @@ nnoremap <Leader>fh <cmd>Telescope help_tags<cr>
 nnoremap <Leader>fr <cmd>Telescope oldfiles<cr>
 nnoremap <Leader>fk <cmd>Telescope keymaps<cr>
 
+" Undotree
+nnoremap <C-u> <cmd>UndotreeToggle<cr>
+
 " ----		PLUGIN SETUP	---- "
 
 " color scheme
