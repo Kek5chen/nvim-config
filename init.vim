@@ -48,6 +48,8 @@ nnoremap <leader>h <cmd>noh<cr>
 
 " color scheme
 colorscheme happy_hacking
+highlight FloatNormal guibg=#292929
+highlight FloatBorder guibg=#292929
 
 let g:vimspector_enable_mappings = 'HUMAN'
 
