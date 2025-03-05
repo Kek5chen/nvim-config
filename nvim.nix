@@ -42,7 +42,7 @@
       nnoremap <C-T>j <cmd>tablast<cr>
       nnoremap <C-T>k <cmd>tabfirst<cr>
 
-      :colorscheme alduin
+      :colorscheme happy_hacking
 
       let g:vimspector_enable_mappings = 'HUMAN'
     '';
