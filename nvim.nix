@@ -34,13 +34,7 @@
 
       nnoremap <leader>h <cmd>noh<cr>
 
-      nnoremap <silent> <C-n> :bnext<CR>
-      nnoremap <silent> <C-p> :bprevious<CR>
-
       nnoremap <C-T>h <cmd>tabprevious<cr>
-      nnoremap <C-T>l <cmd>tabnext<cr>
-      nnoremap <C-T>j <cmd>tablast<cr>
-      nnoremap <C-T>k <cmd>tabfirst<cr>
 
       :colorscheme happy_hacking
 
