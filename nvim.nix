@@ -133,6 +133,8 @@
       vim.keymap.set('n', '<F9>', function() require('dap').toggle_breakpoint() end)
       vim.keymap.set('n', '<Leader>du', function() require('dapui').toggle() end)
 
+      require('gitsigns').setup()
+
       -- he's crazy
 
       print("he's crazy")
@@ -169,7 +171,7 @@
       nvim-dap # debug adapter protocol
       nvim-dap-ui # debug adapter protocol ui
       # vimspector # debugger
-      haskell-tools-nvim
+      gitsigns-nvim
     ];
 
     programs.neovim.defaultEditor = true;
