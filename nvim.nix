@@ -30,11 +30,11 @@
       nnoremap <leader>fk <cmd>Telescope keymaps<cr>
       nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
-      nnoremap <leader>n <cmd>NERDTreeToggle<cr>
+      nnoremap <C-u> <cmd>UndotreeToggle<cr>
+
+      nnoremap <C-\> <cmd>CellularAutomaton make_it_rain<cr>
 
       nnoremap <leader>h <cmd>noh<cr>
-
-      nnoremap <C-T>h <cmd>tabprevious<cr>
 
       :colorscheme happy_hacking
 
