@@ -17,8 +17,8 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   -- utils
-	"nvim-lua/plenary.nvim",
-	"ryanoasis/vim-devicons",
+  "nvim-lua/plenary.nvim",
+  "ryanoasis/vim-devicons",
   "nvim-treesitter/nvim-treesitter",
 
 
@@ -28,9 +28,9 @@ require("lazy").setup({
 
 
   -- effectivity
-	"tpope/vim-commentary",
+  "tpope/vim-commentary",
   {
-	  "NeogitOrg/neogit",
+    "NeogitOrg/neogit",
     cmd = "Neogit",
   },
   -- "akinsho/toggleterm.nvim",
@@ -38,20 +38,24 @@ require("lazy").setup({
 
 
   -- visuals
-	"vim-airline/vim-airline",
-	"ap/vim-css-color",
-	"mhinz/vim-startify",
+  "vim-airline/vim-airline",
+  "ap/vim-css-color",
+  "mhinz/vim-startify",
   "andweeb/presence.nvim",
+  "lewis6991/gitsigns.nvim",
 
 
   -- themes
-	"rafi/awesome-vim-colorschemes",
-
+  "rafi/awesome-vim-colorschemes",
 
   -- finder
   {
-	  "nvim-telescope/telescope.nvim",
+    "nvim-telescope/telescope.nvim",
     cmd = "Telescope",
+  },
+  {
+    "nvim-telescope/telescope-file-browser.nvim",
+    dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
   },
 
 
@@ -95,7 +99,7 @@ require("lazy").setup({
 require "plugins/cmake-tools"
 require "plugins/crates"
 require "plugins/dap"
-require "plugins/haskell-tools"
+-- require "plugins/haskell-tools"
 require "plugins/neogit"
 -- require "plugins/nvim-cmp"
 require "plugins/nvim-dap-ui"

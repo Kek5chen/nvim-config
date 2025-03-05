@@ -4,4 +4,5 @@ require('neogit').setup {
 	},
 	kind = "split"
 }
+vim.ftNix = false;
 
