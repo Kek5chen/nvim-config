@@ -47,7 +47,7 @@ nnoremap <leader>h <cmd>noh<cr>
 " ----		PLUGIN SETUP	---- "
 
 " color scheme
-colorscheme alduin
+colorscheme happy_hacking
 
 let g:vimspector_enable_mappings = 'HUMAN'
 
