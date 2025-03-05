@@ -19,7 +19,9 @@ cmp.setup({
   }),
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
---    { name = 'vsnip' }, -- For vsnip users.
---    { name = 'buffer' },
+    { name = 'vsnip' }, -- For vsnip users.
+    -- { name = 'buffer' },
+    -- { name = 'path' },
+    -- { name = 'cmdline' },
   })
 })
