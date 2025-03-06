@@ -37,6 +37,8 @@
       nnoremap <leader>h <cmd>noh<cr>
 
       :colorscheme happy_hacking
+      highlight FloatNormal guibg=#292929
+      highlight FloatBorder guibg=#292929
 
       let g:vimspector_enable_mappings = 'HUMAN'
     '';
@@ -116,8 +118,10 @@
         }),
         sources = cmp.config.sources({
           { name = 'nvim_lsp' },
-      --    { name = 'vsnip' }, -- For vsnip users.
-      --    { name = 'buffer' },
+          { name = 'vsnip' }, -- For vsnip users.
+          -- { name = 'buffer' },
+          -- { name = 'path' },
+          -- { name = 'cmdline' },
         })
       })
 
@@ -200,7 +204,7 @@
       nvim-cmp # auto completion
       nvim-lspconfig # lsp support
       vim-vsnip # snippet engine
-      # cmp-vsnip # vsnip source for cmp
+      cmp-vsnip # vsnip source for cmp
       cmp-nvim-lsp # LSP source for nvim-cmp
       # cmp-buffer # cmp buffer completions
       # cmp-path # cmp path completions
