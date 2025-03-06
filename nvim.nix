@@ -1,5 +1,5 @@
 # NVim Config Setup
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   config = {
