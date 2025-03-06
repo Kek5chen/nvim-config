@@ -85,6 +85,8 @@
         end,
       })
 
+      require'lspconfig'.nil_ls.setup{}
+
       -- rustaceanvim
       
       local opts = { silent = true }
