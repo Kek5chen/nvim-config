@@ -213,7 +213,7 @@
       nvim-dap-ui # debug adapter protocol ui
       # vimspector # debugger
       gitsigns-nvim
-      cellular-automaton
+      cellular-automaton-nvim
     ];
 
     programs.neovim.defaultEditor = true;
