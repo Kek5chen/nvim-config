@@ -23,6 +23,8 @@
       map <Space> <Leader>
       nnoremap <leader>gg :Neogit<CR>
 
+      nnoremap gb :ls<CR>:b<Space>
+
       nnoremap <leader>ff <cmd>Telescope find_files<cr>
       nnoremap <leader>fg <cmd>Telescope live_grep<cr>
       nnoremap <leader>fb <cmd>Telescope buffers<cr>
