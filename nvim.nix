@@ -281,7 +281,6 @@
       cellular-automaton-nvim
       nvim-autopairs
       undotree
-      lldb
 
       coc-nvim
       coc-rust-analyzer
@@ -320,6 +319,7 @@
     home.packages = with pkgs; [
       nil
       nodejs
+      lldb
     ];
   };
 }
