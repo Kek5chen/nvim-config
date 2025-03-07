@@ -179,6 +179,7 @@
       })
 
       require('gitsigns').setup()
+      require("nvim-autopairs").setup {}
 
       -- he's crazy
 
@@ -218,6 +219,7 @@
       # vimspector # debugger
       gitsigns-nvim
       cellular-automaton-nvim
+      nvim-autopairs
     ];
 
     programs.neovim.defaultEditor = true;
