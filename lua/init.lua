@@ -36,7 +36,7 @@ require("lazy").setup({
   -- "akinsho/toggleterm.nvim",
   "mbbill/undotree",
   "pocco81/auto-save.nvim",
-
+  "windwp/nvim-autopairs",
 
   -- visuals
   "vim-airline/vim-airline",
