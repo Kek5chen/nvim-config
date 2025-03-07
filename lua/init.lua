@@ -89,11 +89,6 @@ require("lazy").setup({
   -- },
   -- 'stevearc/conform.nvim',
   "neoclide/coc-nvim",
-  "neoclide/coc-yaml",
-  "neoclide/coc-json",
-  "fannheyward/coc-rust-analyzer",
-  "josa42/coc-go",
-  "kkiyama117/coc-toml",
 
 
   -- debugging
