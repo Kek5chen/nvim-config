@@ -116,6 +116,7 @@ require "plugins/presence"
 require "plugins/rustacean"
 require "plugins/telescope"
 require "plugins/treesitter"
+require "plugins/gitsigns"
 
 print("he's crazy")
 
