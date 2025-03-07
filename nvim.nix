@@ -20,6 +20,8 @@
       set nobackup
       set nowritebackup
       set signcolumn=yes
+
+      set updatetime=300
       
       nnoremap <C-s> :w<CR>
 
