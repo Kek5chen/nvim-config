@@ -50,6 +50,59 @@
       highlight NormalFloat guibg=#202020
 
       let g:vimspector_enable_mappings = 'HUMAN'
+
+      inoremap <silent><expr> <TAB>
+        \ coc#pum#visible() ? coc#pum#next(1) :
+        \ CheckBackspace() ? "\<Tab>" :
+        \ coc#refresh()
+      inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+      
+      inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+        \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+      function! CheckBackspace() abort
+        let col = col('.') - 1
+        return !col || getline('.')[col - 1]  =~# '\s'
+      endfunction
+
+      inoremap <silent><expr> <c-space> coc#refresh()
+
+      nmap <silent><nowait> [g <Plug>(coc-diagnostic-prev)
+      nmap <silent><nowait> ]g <Plug>(coc-diagnostic-next)
+
+      nmap <silent><nowait> gd <Plug>(coc-definition)
+      nmap <silent><nowait> gy <Plug>(coc-type-definition)
+      nmap <silent><nowait> gi <Plug>(coc-implementation)
+      nmap <silent><nowait> gr <Plug>(coc-references)
+
+      nnoremap <silent> K :call ShowDocumentation()<CR>
+      function! ShowDocumentation()
+        if CocAction('hasProvider', 'hover')
+          call CocActionAsync('doHover')
+        else
+          call feedkeys('K', 'in')
+        endif
+      endfunction
+
+      autocmd CursorHold * silent call CocActionAsync('highlight')
+
+      nmap <leader>rn <Plug>(coc-rename)
+
+      xmap <leader>f  <Plug>(coc-format-selected)
+      nmap <leader>f  <Plug>(coc-format-selected)
+
+      xmap <leader>a  <Plug>(coc-codeaction-selected)
+      nmap <leader>a  <Plug>(coc-codeaction-selected)
+
+      nmap <leader>ac  <Plug>(coc-codeaction-cursor)
+      nmap <leader>as  <Plug>(coc-codeaction-source)
+      nmap <leader>qf  <Plug>(coc-fix-current)
+
+      nmap <silent> <leader>re <Plug>(coc-codeaction-refactor)
+      xmap <silent> <leader>r  <Plug>(coc-codeaction-refactor-selected)
+      nmap <silent> <leader>r  <Plug>(coc-codeaction-refactor-selected)
+
+      nmap <leader>cl  <Plug>(coc-codelens-action)
     '';
     programs.neovim.extraLuaConfig = ''
       require('neogit').setup {
@@ -62,39 +115,39 @@
       
       -- crates
 
-      local crates = require("crates")
-      local opts = { silent = true }
+      -- local crates = require("crates")
+      -- local opts = { silent = true }
 
-      vim.keymap.set("n", "<leader>ct", crates.toggle, opts)
-      vim.keymap.set("n", "<leader>cr", crates.reload, opts)
+      -- vim.keymap.set("n", "<leader>ct", crates.toggle, opts)
+      -- vim.keymap.set("n", "<leader>cr", crates.reload, opts)
 
-      vim.keymap.set("n", "<leader>cv", crates.show_versions_popup, opts)
-      vim.keymap.set("n", "<leader>cf", crates.show_features_popup, opts)
-      vim.keymap.set("n", "<leader>cd", crates.show_dependencies_popup, opts)
+      -- vim.keymap.set("n", "<leader>cv", crates.show_versions_popup, opts)
+      -- vim.keymap.set("n", "<leader>cf", crates.show_features_popup, opts)
+      -- vim.keymap.set("n", "<leader>cd", crates.show_dependencies_popup, opts)
 
-      vim.keymap.set("n", "<leader>cu", crates.update_crate, opts)
-      vim.keymap.set("v", "<leader>cu", crates.update_crates, opts)
-      vim.keymap.set("n", "<leader>ca", crates.update_all_crates, opts)
-      vim.keymap.set("n", "<leader>cU", crates.upgrade_crate, opts)
-      vim.keymap.set("v", "<leader>cU", crates.upgrade_crates, opts)
-      vim.keymap.set("n", "<leader>cA", crates.upgrade_all_crates, opts)
+      -- vim.keymap.set("n", "<leader>cu", crates.update_crate, opts)
+      -- vim.keymap.set("v", "<leader>cu", crates.update_crates, opts)
+      -- vim.keymap.set("n", "<leader>ca", crates.update_all_crates, opts)
+      -- vim.keymap.set("n", "<leader>cU", crates.upgrade_crate, opts)
+      -- vim.keymap.set("v", "<leader>cU", crates.upgrade_crates, opts)
+      -- vim.keymap.set("n", "<leader>cA", crates.upgrade_all_crates, opts)
 
       -- nvim-lspconfig
 
-      vim.api.nvim_create_autocmd('LspAttach', {
-        group = vim.api.nvim_create_augroup('UserLspConfig', {}),
-        callback = function(ev)
-          vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
+      -- vim.api.nvim_create_autocmd('LspAttach', {
+      --   group = vim.api.nvim_create_augroup('UserLspConfig', {}),
+      --   callback = function(ev)
+      --     vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
 
-          local opts = { buffer = ev.buf }
-          vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
-          vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-          vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
-          vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
-        end,
-      })
+      --     local opts = { buffer = ev.buf }
+      --     vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
+      --     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+      --     vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+      --     vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
+      --   end,
+      -- })
 
-      require'lspconfig'.nil_ls.setup{}
+      -- require'lspconfig'.nil_ls.setup{}
 
       -- rustaceanvim
       
@@ -210,14 +263,14 @@
       telescope-nvim # finder (finds everything)
       vim-startify # cool start menu
       vim-nix # nix syntax highlighting and so on
-      crates-nvim # rust crates helper
+      # crates-nvim # rust crates helper
       rustaceanvim # rust everything helper
       webapi-vim # dependency for :RustPlay of rustacean
       nvim-cmp # auto completion
-      nvim-lspconfig # lsp support
-      vim-vsnip # snippet engine
-      cmp-vsnip # vsnip source for cmp
-      cmp-nvim-lsp # LSP source for nvim-cmp
+      # nvim-lspconfig # lsp support
+      # vim-vsnip # snippet engine
+      # cmp-vsnip # vsnip source for cmp
+      # cmp-nvim-lsp # LSP source for nvim-cmp
       # cmp-buffer # cmp buffer completions
       # cmp-path # cmp path completions
       # cmp-cmdline # cmp cmdline completions
@@ -227,6 +280,17 @@
       gitsigns-nvim
       cellular-automaton-nvim
       nvim-autopairs
+      undotree
+      lldb
+
+      coc-nvim
+      coc-rust-analyzer
+      coc-go
+      coc-yaml
+      coc-toml
+      coc-json
+
+      auto-save-nvim
     ];
 
     programs.neovim.defaultEditor = true;
@@ -234,9 +298,28 @@
       viAlias = true;
       vimAlias = true;
     };
+    programs.neovim.coc.settings = ''
+      {
+        "languageserver": {
+          "nix": {
+            "command": "nil",
+            "filetypes": ["nix"],
+            "rootPatterns":  ["flake.nix"],
+
+            // Uncomment these to tweak settings.
+            // "settings": {
+            //   "nil": {
+            //     "formatting": { "command": ["nixfmt"] }
+            //   }
+            // }
+          }
+        }
+      }
+    '';
 
     home.packages = with pkgs; [
       nil
+      nodejs
     ];
   };
 }
