@@ -88,7 +88,7 @@ require("lazy").setup({
   --   dependencies = { "neovim/nvim-lspconfig" },
   -- },
   -- 'stevearc/conform.nvim',
-  "neoclide/coc-nvim",
+  "neoclide/coc.nvim",
 
 
   -- debugging
