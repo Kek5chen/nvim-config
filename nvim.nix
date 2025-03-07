@@ -283,11 +283,11 @@
       undotree
 
       coc-nvim
+      coc-yaml
+      coc-json
       coc-rust-analyzer
       coc-go
-      coc-yaml
       coc-toml
-      coc-json
 
       auto-save-nvim
     ];
