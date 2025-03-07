@@ -35,6 +35,7 @@ require("lazy").setup({
   },
   -- "akinsho/toggleterm.nvim",
   "mbbill/undotree",
+  "pocco81/auto-save.nvim",
 
 
   -- visuals
@@ -75,18 +76,24 @@ require("lazy").setup({
 
 
   -- lsp and completion
-  "hrsh7th/vim-vsnip",
-  "hrsh7th/cmp-vsnip",
-  "hrsh7th/cmp-nvim-lsp",
+  -- "hrsh7th/vim-vsnip",
+  -- "hrsh7th/cmp-vsnip",
+  -- "hrsh7th/cmp-nvim-lsp",
   -- "hrsh7th/cmp-buffer",
   -- "hrsh7th/cmp-path",
   -- "hrsh7th/cmp-cmdline",
-  "hrsh7th/nvim-cmp",
-  {
-    "dundalek/lazy-lsp.nvim",
-    dependencies = { "neovim/nvim-lspconfig" },
-  },
+  -- "hrsh7th/nvim-cmp",
+  -- {
+  --   "dundalek/lazy-lsp.nvim",
+  --   dependencies = { "neovim/nvim-lspconfig" },
+  -- },
   -- 'stevearc/conform.nvim',
+  "neoclide/coc-nvim",
+  "neoclide/coc-yaml",
+  "neoclide/coc-json",
+  "fannheyward/coc-rust-analyzer",
+  "josa42/coc-go",
+  "kkiyama117/coc-toml",
 
 
   -- debugging
@@ -97,13 +104,13 @@ require("lazy").setup({
 })
 
 require "plugins/cmake-tools"
-require "plugins/crates"
+-- require "plugins/crates"
 require "plugins/dap"
 -- require "plugins/haskell-tools"
 require "plugins/neogit"
-require "plugins/nvim-cmp"
+-- require "plugins/nvim-cmp"
 require "plugins/nvim-dap-ui"
-require "plugins/nvim-lspconfig"
+-- require "plugins/nvim-lspconfig"
 require "plugins/overseer"
 require "plugins/presence"
 require "plugins/rustacean"

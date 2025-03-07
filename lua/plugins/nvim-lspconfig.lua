@@ -11,3 +11,5 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
+require'lspconfig'.nil_ls.setup{}
+
