@@ -5,17 +5,21 @@
   config = {
     programs.neovim.enable = true;
     programs.neovim.extraConfig = ''
-      :set number
-      :set relativenumber
-      :set autoindent
-      :set tabstop=2
-      :set shiftwidth=2
-      :set smarttab
-      :set softtabstop=2
-      :set mouse=a
-      :set laststatus=2
-      :set expandtab
-      :set termguicolors
+      set number
+      set relativenumber
+      set autoindent
+      set tabstop=2
+      set shiftwidth=2
+      set smarttab
+      set softtabstop=2
+      set mouse=a
+      set laststatus=2
+      set expandtab
+      set termguicolors
+      set encoding=utf-8
+      set nobackup
+      set nowritebackup
+      set signcolumn=yes
       
       nnoremap <C-s> :w<CR>
 
