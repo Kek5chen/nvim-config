@@ -37,6 +37,7 @@
       nnoremap <leader>fc <cmd>Telescope git_commits<cr>
       nnoremap <leader>fk <cmd>Telescope keymaps<cr>
       nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+      nnoremap <leader>fp <cmd>Telescope diagnostics<cr>
 
       nnoremap <leader>gi <cmd>Gitsigns preview_hunk_inline<cr>
       nnoremap <C-u> <cmd>UndotreeToggle<cr>
