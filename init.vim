@@ -1,5 +1,5 @@
 " vimspector
-source ~/.config/nvim/lua/init.lua
+source lua/init.lua
 " ----		GENERAL CONFIG OPTIONS	---- "
 
 set number
