@@ -112,6 +112,7 @@ require "plugins/rustacean"
 require "plugins/telescope"
 require "plugins/treesitter"
 require "plugins/gitsigns"
+require "plugins/autopairs"
 
 print("he's crazy")
 
