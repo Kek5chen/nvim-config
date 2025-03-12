@@ -57,9 +57,6 @@
         \ coc#refresh()
       inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
       
-      inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
-        \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-
       function! CheckBackspace() abort
         let col = col('.') - 1
         return !col || getline('.')[col - 1]  =~# '\s'
@@ -239,7 +236,21 @@
       })
 
       require('gitsigns').setup()
-      require("nvim-autopairs").setup {}
+
+      local remap = vim.api.nvim_set_keymap
+      local npairs = require('nvim-autopairs')
+      npairs.setup({map_cr=false})
+
+      _G.MUtils= {}
+      MUtils.completion_confirm=function()
+          if vim.fn["coc#pum#visible"]() ~= 0  then
+              return vim.fn["coc#pum#confirm"]()
+          else
+              return npairs.autopairs_cr()
+          end
+      end
+
+      remap('i' , '<CR>','v:lua.MUtils.completion_confirm()', {expr = true , noremap = true})
 
       -- he's crazy
 
