@@ -331,6 +331,7 @@
       nil
       nodejs
       lldb
+      gopls
     ];
   };
 }
