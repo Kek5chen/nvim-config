@@ -1,5 +1,5 @@
 " vimspector
-source lua/init.lua
+runtime lua/init.lua
 " ----		GENERAL CONFIG OPTIONS	---- "
 
 set number
