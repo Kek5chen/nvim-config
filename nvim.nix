@@ -106,6 +106,8 @@
         integrations = {
           diffview = true
         },
+        graph_style = "unicode",
+        process_spinner = true,
         kind = "split"
       }
       vim.ftNix = false;
