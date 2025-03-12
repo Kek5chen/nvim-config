@@ -307,6 +307,10 @@
     programs.neovim = {
       viAlias = true;
       vimAlias = true;
+
+      withNodeJs = true;
+      withPython3 = true;
+      withRuby = true;
     };
     programs.neovim.coc.settings = ''
       {
