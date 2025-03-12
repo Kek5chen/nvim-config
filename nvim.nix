@@ -254,6 +254,14 @@
 
       remap('i' , '<CR>','v:lua.MUtils.completion_confirm()', {expr = true , noremap = true})
 
+      -- treesitter
+
+      require'nvim-treesitter.configs'.setup {
+        highlight = {
+          enable = true
+        },
+      }
+
       -- he's crazy
 
       print("he's crazy")
