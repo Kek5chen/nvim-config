@@ -46,7 +46,7 @@
 
       nnoremap <leader>h <cmd>noh<cr>
 
-      :colorscheme happy_hacking
+      :colorscheme apprentice
       highlight NormalFloat guibg=#202020
 
       let g:vimspector_enable_mappings = 'HUMAN'
@@ -302,6 +302,7 @@
       cellular-automaton-nvim
       nvim-autopairs
       undotree
+      diffview-nvim
 
       coc-nvim
       coc-yaml
