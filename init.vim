@@ -60,7 +60,7 @@ nnoremap <leader>h <cmd>noh<cr>
 " ----		PLUGIN SETUP	---- "
 
 " color scheme
-colorscheme happy_hacking
+colorscheme jellybeans
 highlight NormalFloat guibg=#202020
 
 let g:vimspector_enable_mappings = 'HUMAN'
