@@ -88,6 +88,9 @@
       xmap <leader>f  <Plug>(coc-format-selected)
       nmap <leader>f  <Plug>(coc-format-selected)
 
+      command! -nargs=0 Format :call CocActionAsync('format')
+      command! -nargs=0 OR     :call CocActionAsync('runCommand', 'editor.action.organizeImport')
+
       xmap <leader>a  <Plug>(coc-codeaction-selected)
       nmap <leader>a  <Plug>(coc-codeaction-selected)
 
