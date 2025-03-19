@@ -46,7 +46,7 @@
 
       nnoremap <leader>h <cmd>noh<cr>
 
-      :colorscheme anderson
+      :colorscheme jellybeans
       highlight NormalFloat guibg=#202020
 
       let g:vimspector_enable_mappings = 'HUMAN'
