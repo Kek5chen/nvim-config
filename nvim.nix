@@ -40,6 +40,7 @@
       nnoremap <leader>fp <cmd>Telescope diagnostics<cr>
 
       nnoremap <leader>gi <cmd>Gitsigns preview_hunk_inline<cr>
+      nnoremap <leader>bb <cmd>Gitsigns blame<cr>
       nnoremap <C-u> <cmd>UndotreeToggle<cr>
 
       nnoremap <C-\> <cmd>CellularAutomaton make_it_rain<cr>
