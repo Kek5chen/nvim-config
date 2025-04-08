@@ -48,6 +48,7 @@ nnoremap <leader>fp <cmd>Telescope diagnostics<cr>
 
 "Gitsigns
 nnoremap <leader>gi <cmd>Gitsigns preview_hunk_inline<cr>
+nnoremap <leader>bb <cmd>Gitsigns blame<cr>
 
 " Undotree
 nnoremap <C-u> <cmd>UndotreeToggle<cr>
