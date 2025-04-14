@@ -61,7 +61,8 @@ nnoremap <leader>h <cmd>noh<cr>
 " ----		PLUGIN SETUP	---- "
 
 " color scheme
-colorscheme jellybeans
+colorscheme catppuccin-mocha
+
 highlight NormalFloat guibg=#202020
 
 let g:vimspector_enable_mappings = 'HUMAN'
