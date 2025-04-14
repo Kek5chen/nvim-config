@@ -314,7 +314,7 @@
       undotree
       diffview-nvim
       catppuccin-nvim
-      vimPlugins.lsp_signature-nvim
+      lsp_signature-nvim
 
       coc-nvim
       coc-yaml
