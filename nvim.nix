@@ -47,7 +47,7 @@
 
       nnoremap <leader>h <cmd>noh<cr>
 
-      :colorscheme jellybeans
+      colorscheme catppuccin-mocha
       highlight NormalFloat guibg=#202020
 
       let g:vimspector_enable_mappings = 'HUMAN'
@@ -307,6 +307,7 @@
       nvim-autopairs
       undotree
       diffview-nvim
+      catppuccin-nvim
 
       coc-nvim
       coc-yaml
