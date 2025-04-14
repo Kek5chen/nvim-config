@@ -266,6 +266,12 @@
         },
       }
 
+      -- lsp_signature
+      require "lsp_signature".setup({
+        fix_pos = true,
+        timer_interval = 50,
+      })
+
       -- he's crazy
 
       print("he's crazy")
@@ -308,6 +314,7 @@
       undotree
       diffview-nvim
       catppuccin-nvim
+      vimPlugins.lsp_signature-nvim
 
       coc-nvim
       coc-yaml
