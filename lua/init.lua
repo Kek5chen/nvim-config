@@ -90,6 +90,14 @@ require("lazy").setup({
   -- },
   -- 'stevearc/conform.nvim',
   "neoclide/coc.nvim",
+  {
+    "ray-x/lsp_signature.nvim",
+    event = "InsertEnter",
+    opts = {
+      fix_pos = true,
+      timer_interval = 50,
+    }
+  },
 
 
   -- debugging
