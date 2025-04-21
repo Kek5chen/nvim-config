@@ -9,7 +9,7 @@ require("presence").setup({
     show_time           = true,                       -- Show the timer
 
     -- Rich Presence text options
-    editing_text        = "I woke up in my face covered in glitter",
+    editing_text        = "I woke up with my face covered in glitter",
     file_explorer_text  = "I drop off the earth",
     git_commit_text     = "Nobody checks upon me",
     plugin_manager_text = "I like being alone, I don't know why",
