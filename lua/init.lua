@@ -33,6 +33,7 @@ require("lazy").setup({
     "NeogitOrg/neogit",
     cmd = "Neogit",
   },
+  "sindrets/diffview.nvim",
   -- "akinsho/toggleterm.nvim",
   "mbbill/undotree",
   -- "pocco81/auto-save.nvim",
