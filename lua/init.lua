@@ -38,6 +38,13 @@ require("lazy").setup({
   "mbbill/undotree",
   -- "pocco81/auto-save.nvim",
   "windwp/nvim-autopairs",
+  {
+    'saecki/crates.nvim',
+    tag = 'stable',
+    config = function()
+        require('crates').setup()
+    end,
+  },
 
   -- visuals
   "vim-airline/vim-airline",
