@@ -45,6 +45,7 @@ nnoremap <Leader>fh <cmd>Telescope help_tags<cr>
 nnoremap <Leader>fr <cmd>Telescope oldfiles<cr>
 nnoremap <Leader>fk <cmd>Telescope keymaps<cr>
 nnoremap <leader>fp <cmd>Telescope diagnostics<cr>
+nnoremap <leader>ft <cmd>Telescope treesitter<cr>
 
 "Gitsigns
 nnoremap <leader>gi <cmd>Gitsigns preview_hunk_inline<cr>
