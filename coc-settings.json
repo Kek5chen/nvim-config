@@ -5,7 +5,10 @@
       "filetypes": ["nix"],
       "rootPatterns":  ["flake.nix"]
     }
-  }
+  },
+
+  "inlayHint.enable": false,
+  "inlayHint.enableParameter": true,
 
   "rust-analyzer.enable": true,
   "rust-analyzer.assist.expressionFillDefault": "default"
