@@ -6,4 +6,7 @@
       "rootPatterns":  ["flake.nix"]
     }
   }
+
+  "rust-analyzer.enable": true,
+  "rust-analyzer.assist.expressionFillDefault": "default"
 }
