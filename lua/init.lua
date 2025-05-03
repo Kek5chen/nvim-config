@@ -78,7 +78,7 @@ require("lazy").setup({
 
   -- integration & build
   "Civitasv/cmake-tools.nvim",
-  "mrcjkb/rustaceanvim",
+  -- "mrcjkb/rustaceanvim",
   "stevearc/overseer.nvim",
   "Saecki/crates.nvim",
   "mrcjkb/haskell-tools.nvim",
@@ -125,7 +125,7 @@ require "plugins/nvim-dap-ui"
 -- require "plugins/nvim-lspconfig"
 require "plugins/overseer"
 require "plugins/presence"
-require "plugins/rustacean"
+-- require "plugins/rustacean"
 require "plugins/telescope"
 require "plugins/treesitter"
 require "plugins/gitsigns"
