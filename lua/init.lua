@@ -27,7 +27,7 @@ require("lazy").setup({
   "rootkiter/vim-hexedit",
 
 
-  -- effectivity
+  -- efficiency
   "tpope/vim-commentary",
   {
     "NeogitOrg/neogit",
@@ -44,6 +44,10 @@ require("lazy").setup({
     config = function()
         require('crates').setup()
     end,
+  },
+  {
+    "godlygeek/tabular",
+    cmd = "Tabular",
   },
 
   -- visuals
