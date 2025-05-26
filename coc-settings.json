@@ -11,7 +11,9 @@
   "inlayHint.enableParameter": true,
 
   "rust-analyzer.enable": true,
-  "rust-analyzer.expressionFillDefault": "default",
+  "rust-analyzer.cargo.features": "all",
+  "rust-analyzer.cargo.allTargets": true,
+  "rust-analyzer.assist.expressionFillDefault": "default",
 
   "workspace.ignoredFolders": [
     "$HOME",
