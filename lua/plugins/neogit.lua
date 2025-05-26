@@ -1,6 +1,6 @@
 require('neogit').setup {
 	integrations = {
-		diffview = true
+		diffview = false
 	},
   kind = "split",
   process_spinner = true

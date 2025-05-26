@@ -33,7 +33,7 @@ require("lazy").setup({
     "NeogitOrg/neogit",
     cmd = "Neogit",
   },
-  "sindrets/diffview.nvim",
+  -- "sindrets/diffview.nvim",
   -- "akinsho/toggleterm.nvim",
   "mbbill/undotree",
   -- "pocco81/auto-save.nvim",
@@ -82,11 +82,14 @@ require("lazy").setup({
 
   -- integration & build
   "Civitasv/cmake-tools.nvim",
-  -- "mrcjkb/rustaceanvim",
+  "mrcjkb/rustaceanvim",
   "stevearc/overseer.nvim",
   "Saecki/crates.nvim",
-  "mrcjkb/haskell-tools.nvim",
-
+  -- "mrcjkb/haskell-tools.nvim",
+  {
+    "lucidph3nx/nvim-sops",
+    event = { 'BufEnter' }
+  },
 
   -- lsp and completion
   -- "hrsh7th/vim-vsnip",
@@ -108,6 +111,7 @@ require("lazy").setup({
     opts = {
       fix_pos = true,
       timer_interval = 50,
+      zindex = 20,
     }
   },
 
@@ -120,7 +124,7 @@ require("lazy").setup({
 })
 
 require "plugins/cmake-tools"
--- require "plugins/crates"
+require "plugins/crates"
 require "plugins/dap"
 -- require "plugins/haskell-tools"
 require "plugins/neogit"
@@ -129,7 +133,7 @@ require "plugins/nvim-dap-ui"
 -- require "plugins/nvim-lspconfig"
 require "plugins/overseer"
 require "plugins/presence"
--- require "plugins/rustacean"
+require "plugins/rustacean"
 require "plugins/telescope"
 require "plugins/treesitter"
 require "plugins/gitsigns"

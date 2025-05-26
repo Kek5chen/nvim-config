@@ -1,7 +1,28 @@
 local crates = require('crates')
 local opts = { silent = true }
 
-crates.setup()
+crates.setup {
+  lsp = {
+    enabled = true,
+    on_attach = function(client, bufnr)
+    end,
+    actions = true,
+    completion = true,
+    hover = true, 
+  },
+
+  popup = {
+      autofocus = true,
+  },
+
+  completion = {
+    crates = {
+      enabled = true,
+      min_chars = 2,
+      max_results = 8,
+    },
+  },
+}
 
 vim.keymap.set("n", "<leader>ct", crates.toggle, opts)
 vim.keymap.set("n", "<leader>cr", crates.reload, opts)

@@ -20,6 +20,8 @@ set signcolumn=yes
 
 set updatetime=300
 
+set bufhidden=delete
+
 " ----		KEYBIND SETUP		---- "
 
 " Save
@@ -109,11 +111,12 @@ nmap <leader>f  <Plug>(coc-format-selected)
 command! -nargs=0 Format :call CocActionAsync('format')
 command! -nargs=0 OR   :call     CocActionAsync('runCommand', 'editor.action.organizeImport')
 
-xmap <leader>a  <Plug>(coc-codeaction-selected)
-nmap <leader>a  <Plug>(coc-codeaction-selected)
+xmap <leader>ca  <Plug>(coc-codeaction-selected)
+nmap <leader>ca  <Plug>(coc-codeaction-selected)
 
-nmap <leader>ac  <Plug>(coc-codeaction-cursor)
-nmap <leader>as  <Plug>(coc-codeaction-source)
+xmap <leader>a  <Plug>(coc-codeaction-cursor)
+nmap <leader>a  <Plug>(coc-codeaction-cursor)
+nmap <leader>sa  <Plug>(coc-codeaction-source)
 nmap <leader>qf  <Plug>(coc-fix-current)
 
 nmap <silent> <leader>re <Plug>(coc-codeaction-refactor)
