@@ -15,6 +15,12 @@
   "rust-analyzer.cargo.allTargets": true,
   "rust-analyzer.assist.expressionFillDefault": "default",
 
+  "yaml.enable": true,
+  "yaml.completion": true,
+  "yaml.schemas": {
+    "kubernetes": "/*.yaml"
+  },
+
   "workspace.ignoredFolders": [
     "$HOME",
     "$HOME/.cargo/**",
