@@ -19,7 +19,12 @@ require("lazy").setup({
   -- utils
   "nvim-lua/plenary.nvim",
   "ryanoasis/vim-devicons",
-  "nvim-treesitter/nvim-treesitter",
+  {
+    "nvim-treesitter/nvim-treesitter",
+    branch = "main",
+    lazy = false,
+    build = ":TSUpdate",
+  },
 
 
   -- tools
