@@ -1,27 +1,21 @@
-local remap = vim.api.nvim_set_keymap
-local npairs = require('nvim-autopairs')
-npairs.setup({map_cr=false})
+local pairs = require("nvim-autopairs")
+local M = {}
 
--- skip it, if you use another global object
-_G.MUtils= {}
-
--- old version
--- MUtils.completion_confirm=function()
-  -- if vim.fn["coc#pum#visible"]() ~= 0 then
-    -- return vim.fn["coc#_select_confirm"]()
-  -- else
-    -- return npairs.autopairs_cr()
-  -- end
--- end
-
--- new version for custom pum
-MUtils.completion_confirm=function()
-    if vim.fn["coc#pum#visible"]() ~= 0  then
-        return vim.fn["coc#pum#confirm"]()
-    else
-        return npairs.autopairs_cr()
+function M.setup()
+  pairs.setup({ map_cr = false })
+  vim.keymap.set("i", "<CR>", function()
+    if vim.fn["coc#pum#visible"]() == 1 then
+      return vim.fn["coc#pum#confirm"]()
     end
+    return pairs.autopairs_cr()
+  end, { expr = true, replace_keycodes = false, desc = "Confirm completion or insert newline" })
 end
 
-remap('i' , '<CR>','v:lua.MUtils.completion_confirm()', {expr = true , noremap = true})
+function M.confirm_native()
+  if vim.fn.pumvisible() == 1 and vim.fn.complete_info({ "selected" }).selected >= 0 then
+    return vim.keycode("<C-y>")
+  end
+  return pairs.autopairs_cr()
+end
 
+return M

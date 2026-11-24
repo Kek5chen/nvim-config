@@ -10,10 +10,7 @@
   "inlayHint.enable": false,
   "inlayHint.enableParameter": true,
 
-  "rust-analyzer.enable": true,
-  "rust-analyzer.cargo.features": "all",
-  "rust-analyzer.cargo.allTargets": true,
-  "rust-analyzer.assist.expressionFillDefault": "default",
+  "rust-analyzer.enable": false,
 
   "yaml.enable": true,
   "yaml.completion": true,

@@ -44,11 +44,10 @@ require("lazy").setup({
   -- "pocco81/auto-save.nvim",
   "windwp/nvim-autopairs",
   {
-    'saecki/crates.nvim',
-    tag = 'stable',
-    config = function()
-        require('crates').setup()
-    end,
+    "saecki/crates.nvim",
+    tag = "stable",
+    event = { "BufRead Cargo.toml", "BufNewFile Cargo.toml" },
+    config = function() require("plugins.crates") end,
   },
   {
     "godlygeek/tabular",
@@ -87,9 +86,12 @@ require("lazy").setup({
 
   -- integration & build
   "Civitasv/cmake-tools.nvim",
-  "mrcjkb/rustaceanvim",
+  {
+    "mrcjkb/rustaceanvim",
+    lazy = false,
+    init = function() require("plugins.rustacean") end,
+  },
   "stevearc/overseer.nvim",
-  "Saecki/crates.nvim",
   -- "mrcjkb/haskell-tools.nvim",
   {
     "lucidph3nx/nvim-sops",
@@ -131,8 +133,6 @@ require("lazy").setup({
 })
 
 require "plugins/cmake-tools"
-require "plugins/crates"
-require "plugins/dap"
 -- require "plugins/haskell-tools"
 require "plugins/neogit"
 -- require "plugins/nvim-cmp"
@@ -140,11 +140,10 @@ require "plugins/nvim-dap-ui"
 -- require "plugins/nvim-lspconfig"
 require "plugins/overseer"
 require "plugins/presence"
-require "plugins/rustacean"
 require "plugins/telescope"
 require "plugins/treesitter"
 require "plugins/gitsigns"
-require "plugins/autopairs"
+require("plugins.autopairs").setup()
 
 print("he's crazy")
 
