@@ -1,4 +1,16 @@
-" vimspector
+let mapleader = ' '
+let maplocalleader = ' '
+
+if has('win32')
+  set noshelltemp
+  let &shell = 'powershell.exe'
+  let &shellcmdflag = '-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command '
+  let &shellcmdflag .= '[Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.UTF8Encoding]::new();'
+  let &shellcmdflag .= '$PSDefaultParameterValues[''Out-File:Encoding'']=''utf8'';'
+  let &shellpipe = '> %s 2>&1'
+  set shellquote= shellxquote=
+endif
+
 runtime lua/init.lua
 " ----		GENERAL CONFIG OPTIONS	---- "
 
@@ -10,6 +22,10 @@ set shiftwidth=2
 set smarttab
 set softtabstop=2
 set mouse=a
+set scrolloff=5
+set splitbelow splitright
+set ignorecase smartcase
+set cursorline cursorlineopt=number
 set laststatus=2
 set expandtab
 set termguicolors
@@ -20,17 +36,13 @@ set signcolumn=yes
 
 set updatetime=300
 
-set bufhidden=delete
+set hidden
+set undofile
 
 " ----		KEYBIND SETUP		---- "
 
 " Save
 nnoremap <C-s> :w<CR>
-
-" Fix terminal escape
-tnoremap <Esc> <C-\><C-n>
-
-map <Space> <Leader>
 
 " Neogit
 nnoremap <leader>gg :Neogit<CR>
@@ -39,8 +51,6 @@ nnoremap <leader>gg :Neogit<CR>
 nnoremap gb :ls<CR>:b<Space>
 
 " Telescope
-nnoremap <Leader>ff <cmd>Telescope find_files<cr>
-nnoremap <Leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <Leader>fb <cmd>Telescope buffers<cr>
 nnoremap <Leader>fc <cmd>Telescope git_commits<cr>
 nnoremap <Leader>fh <cmd>Telescope help_tags<cr>
@@ -54,28 +64,21 @@ nnoremap <leader>gi <cmd>Gitsigns preview_hunk_inline<cr>
 nnoremap <leader>bb <cmd>Gitsigns blame<cr>
 
 " Undotree
-nnoremap <C-u> <cmd>UndotreeToggle<cr>
-
-" Psshhh
-nnoremap <C-\> <cmd>CellularAutomaton make_it_rain<cr>
+nnoremap <leader>u <cmd>UndotreeToggle<cr>
 
 nnoremap <leader>h <cmd>noh<cr>
 
 " ----		PLUGIN SETUP	---- "
 
 " color scheme
-colorscheme catppuccin-mocha
-
-highlight NormalFloat guibg=#202020
-
-let g:vimspector_enable_mappings = 'HUMAN'
+colorscheme industry
 
 " Coc configuration
 inoremap <silent><expr> <TAB>
   \ coc#pum#visible() ? coc#pum#next(1) :
   \ CheckBackspace() ? "\<Tab>" :
   \ coc#refresh()
-inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-d>"
 
 function! CheckBackspace() abort
   let col = col('.') - 1
@@ -90,23 +93,26 @@ nmap <silent><nowait> ]g <Plug>(coc-diagnostic-next)
 nmap <silent><nowait> gd <Plug>(coc-definition)
 nmap <silent><nowait> gy <Plug>(coc-type-definition)
 nmap <silent><nowait> gi <Plug>(coc-implementation)
-nmap <silent><nowait> gr <Plug>(coc-references)
+nmap <silent> grr <Plug>(coc-references)
 
 nnoremap <silent> K :call ShowDocumentation()<CR>
 function! ShowDocumentation()
-  if CocAction('hasProvider', 'hover')
+  if get(g:, 'coc_service_initialized', 0) && CocHasProvider('hover')
     call CocActionAsync('doHover')
   else
     call feedkeys('K', 'in')
   endif
 endfunction
 
-autocmd CursorHold * silent call CocActionAsync('highlight')
+augroup CocDocumentHighlight
+  autocmd!
+  autocmd CursorHold * if &buftype ==# '' && !get(b:, 'native_lsp', 0) && get(g:, 'coc_service_initialized', 0) && CocHasProvider('documentHighlight') | call CocActionAsync('highlight') | endif
+augroup END
 
 nmap <leader>rn <Plug>(coc-rename)
 
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+xmap <leader>lf <Plug>(coc-format-selected)
+nnoremap <leader>lf <cmd>Format<cr>
 
 command! -nargs=0 Format :call CocActionAsync('format')
 command! -nargs=0 OR   :call     CocActionAsync('runCommand', 'editor.action.organizeImport')
@@ -120,9 +126,14 @@ nmap <leader>sa  <Plug>(coc-codeaction-source)
 nmap <leader>qf  <Plug>(coc-fix-current)
 
 nmap <silent> <leader>re <Plug>(coc-codeaction-refactor)
-xmap <silent> <leader>r  <Plug>(coc-codeaction-refactor-selected)
-nmap <silent> <leader>r  <Plug>(coc-codeaction-refactor-selected)
+xmap <silent> <leader>re <Plug>(coc-codeaction-refactor-selected)
 
 nmap <leader>cl  <Plug>(coc-codelens-action)
+
+" CoC owns the temporary cursor selections even in native LSP buffers.
+nmap <silent> <leader>mw <Plug>(coc-cursors-word)
+xmap <silent> <leader>mw <Plug>(coc-cursors-range)
+nmap <silent> <leader>mp <Plug>(coc-cursors-position)
+nnoremap <silent> <leader>ma <cmd>lua require('plugins.cursors').select_matches()<cr>
 
 " ----		CONFIG END		---- "

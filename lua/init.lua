@@ -1,8 +1,8 @@
 -- Bootstrap lazy.nvim
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
+if not vim.uv.fs_stat(lazypath) then
+  local output = vim.fn.system({
     "git",
     "clone",
     "--filter=blob:none",
@@ -10,6 +10,9 @@ if not vim.loop.fs_stat(lazypath) then
     "--branch=stable", -- latest stable release
     lazypath,
   })
+  if vim.v.shell_error ~= 0 then
+    error("Could not install lazy.nvim:\n" .. output)
+  end
 end
 vim.opt.rtp:prepend(lazypath)
 
@@ -70,6 +73,7 @@ require("lazy").setup({
   {
     "nvim-telescope/telescope.nvim",
     cmd = "Telescope",
+    config = function() require("plugins.telescope").setup() end,
   },
   {
     "nvim-telescope/telescope-file-browser.nvim",
@@ -111,7 +115,10 @@ require("lazy").setup({
   --   dependencies = { "neovim/nvim-lspconfig" },
   -- },
   -- 'stevearc/conform.nvim',
-  "neoclide/coc.nvim",
+  {
+    "neoclide/coc.nvim",
+    branch = "release",
+  },
   {
     "ray-x/lsp_signature.nvim",
     event = "InsertEnter",
@@ -140,10 +147,8 @@ require "plugins/nvim-dap-ui"
 -- require "plugins/nvim-lspconfig"
 require "plugins/overseer"
 require "plugins/presence"
-require "plugins/telescope"
+require("plugins.telescope").keymaps()
 require "plugins/treesitter"
 require "plugins/gitsigns"
 require("plugins.autopairs").setup()
-
-print("he's crazy")
 
