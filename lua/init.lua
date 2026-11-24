@@ -121,6 +121,8 @@ require("lazy").setup({
   },
 
 
+  require("plugins.sidekick"),
+
   -- debugging
   "mfussenegger/nvim-dap",
   "nvim-neotest/nvim-nio",
