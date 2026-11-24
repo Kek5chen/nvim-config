@@ -9,11 +9,16 @@ function M.setup()
   telescope.setup({
     defaults = {
       file_ignore_patterns = { "[\\/]%.git[\\/]" },
-      layout_strategy = "flex",
+      sorting_strategy = "ascending",
+      layout_strategy = "bottom_pane",
       layout_config = {
-        width = 0.94,
-        height = 0.85,
-        flip_columns = 110,
+        bottom_pane = { height = 10 },
+      },
+      border = false,
+      borderchars = {
+        prompt = { "─", " ", " ", " ", "─", "─", " ", " " },
+        results = { " " },
+        preview = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
       },
     },
     extensions = {
